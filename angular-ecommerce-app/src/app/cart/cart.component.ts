@@ -34,7 +34,7 @@ export class CartComponent {
     async checkout() {
         this.isLoading = true;
 
-        this.http.post<{ url: string }>(`${environment.serverUrl}/api/payment/create-checkout-session`, {
+        this.http.post<{ url: string }>(`${environment.serverUrl ?? 'https://angular-ecommerce-omega.vercel.app'}/api/payment/create-checkout-session`, {
             items: this.data().items.map(item => ({
                 name: item.title,
                 description: item.description,
