@@ -1,0 +1,15 @@
+<ui-card>
+    <app-image-loader class="product-img" [src]="data?.image ?? ''" [alt]="'product'"
+        *ngIf="data?.image"></app-image-loader>
+    <ui-card-header>
+        <ui-card-title>{{data?.title}}</ui-card-title>
+    </ui-card-header>
+    <ui-card-body>
+        <ui-card-footer>
+            <span>{{data?.price | currency}}</span>
+            <button type="button" (click)="addToCart(data!)">
+                <lucide-angular [img]="Plus" [size]="18" class="my-icon" />
+            </button>
+        </ui-card-footer>
+    </ui-card-body>
+</ui-card>

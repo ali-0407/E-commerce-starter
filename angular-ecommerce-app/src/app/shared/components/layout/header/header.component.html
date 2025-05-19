@@ -1,0 +1,14 @@
+<header class="container">
+    <nav>
+        <a class="logo" routerLink="/">LOGO</a>
+        <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+            ariaCurrentWhenActive="page">Home</a>
+        <a class="nav-link" routerLink="/products" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+            ariaCurrentWhenActive="page">Shop</a>
+        <a class="cart-link" routerLink="/cart" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+            ariaCurrentWhenActive="page">
+            <lucide-angular [img]="ShoppingBag" [size]="24" class="my-icon" />
+            <span *ngIf="cartTotalQuantities > 0">{{cartTotalQuantities}}</span>
+        </a>
+    </nav>
+</header>
