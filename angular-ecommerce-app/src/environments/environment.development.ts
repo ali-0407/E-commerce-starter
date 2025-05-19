@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    serverUrl: "http://localhost:4242"
+    serverUrl: "https://angular-ecommerce-omega.vercel.app/"
 };
