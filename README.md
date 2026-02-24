@@ -10,15 +10,6 @@
 <p align="center">
   <strong>Modern, responsive e‑commerce front-end</strong> — Angular 19, NgRx, Sass & Node.js with Stripe integration.
 </p>
-
-<p align="center">
-  <a href="#-quick-start">Quick Start</a>
-  &nbsp;·&nbsp;
-  <a href="#-deploy-to-vercel">Deploy</a>
-  &nbsp;·&nbsp;
-  <a href="#-contact">Contact</a>
-</p>
-
 ---
 
 ## Table of contents
@@ -58,9 +49,9 @@ A production-oriented e‑commerce front-end built with **Angular 19.2**, **NgRx
 | Layer        | Technologies                                                |
 | ------------ | ----------------------------------------------------------- |
 | **Frontend** | Angular 19.2, NgRx, RxJS, TypeScript, Sass, Stripe (client) |
-| **Backend**  | Node.js, Express (Stripe webhooks & checkout)                |
+| **Backend**  | Node.js, Express (Stripe webhooks & checkout)               |
 | **Styling**  | SCSS, CSS animations, responsive breakpoints                |
-| **Deploy**   | Vercel (frontend + backend as separate projects)             |
+| **Deploy**   | Vercel (frontend + backend as separate projects)            |
 
 ---
 
@@ -97,10 +88,10 @@ Open [http://localhost:4200](http://localhost:4200). Ensure the backend is runni
 
 Deploy **frontend** and **backend** as **two separate Vercel projects**.
 
-| Project   | Root Directory          | Build Command   | Output Directory             |
-| --------- | ----------------------- | --------------- | ---------------------------- |
-| Frontend  | `angular-ecommerce-app` | `npm run build` | `dist/angular-ecommerce-app`  |
-| Backend   | `my-app-server`         | *(none)*        | — (Vercel runs `server.js`)   |
+| Project  | Root Directory          | Build Command   | Output Directory             |
+| -------- | ----------------------- | --------------- | ---------------------------- |
+| Frontend | `angular-ecommerce-app` | `npm run build` | `dist/angular-ecommerce-app` |
+| Backend  | `my-app-server`         | _(none)_        | — (Vercel runs `server.js`)  |
 
 **After deploying the backend:** copy its URL (e.g. `https://my-app-server-xxx.vercel.app`). In the **frontend** Vercel project, add an environment variable (e.g. `serverUrl` or the name your Angular app uses) and set it to that backend URL so the app can call the API. Redeploy the frontend after setting the variable.
 
@@ -133,18 +124,3 @@ For bugs or questions, open an [issue](https://github.com/ali-0407/angular-ecomm
 This project is licensed under the **MIT License** — see the [LICENSE](https://opensource.org/licenses/MIT) file for details.
 
 ---
-
-## Contact
-
-**Muhammad Umair Ali**
-
-| | |
-|--|--|
-| **Email** | [maliupwork123@gmail.com](mailto:maliupwork123@gmail.com) |
-| **GitHub** | [github.com/ali-0407](https://github.com/ali-0407) |
-
----
-
-<p align="center">
-  <sub>Built with Angular &amp; Node.js</sub>
-</p>
