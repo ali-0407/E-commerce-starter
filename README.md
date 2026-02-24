@@ -88,10 +88,12 @@ Open [http://localhost:4200](http://localhost:4200). Ensure the backend is runni
 
 Deploy **frontend** and **backend** as **two separate Vercel projects**.
 
-| Project  | Root Directory          | Build Command   | Output Directory             |
-| -------- | ----------------------- | --------------- | ---------------------------- |
-| Frontend | `angular-ecommerce-app` | `npm run build` | `dist/angular-ecommerce-app` |
-| Backend  | `my-app-server`         | _(none)_        | — (Vercel runs `server.js`)  |
+| Project  | Root Directory          | Build Command   | Output Directory                          |
+| -------- | ----------------------- | --------------- | ----------------------------------------- |
+| Frontend | `angular-ecommerce-app` | `npm run build` | **`dist/angular-ecommerce-app/browser`**   |
+| Backend  | `my-app-server`         | _(none)_        | — (Vercel runs `server.js`)               |
+
+**Important (Angular 19):** The frontend build puts files in a `browser` subfolder. You **must** set the frontend project’s **Output Directory** to `dist/angular-ecommerce-app/browser` in Vercel (Project → Settings → General). If you use `dist/angular-ecommerce-app` you will get 404s. The repo’s `angular-ecommerce-app/vercel.json` already sets this.
 
 **After deploying the backend:** copy its URL (e.g. `https://my-app-server-xxx.vercel.app`). In the **frontend** Vercel project, add an environment variable (e.g. `serverUrl` or the name your Angular app uses) and set it to that backend URL so the app can call the API. Redeploy the frontend after setting the variable.
 
