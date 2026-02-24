@@ -32,8 +32,9 @@
     } @else {
     <div class="cart-empty">
         <p>Your shopping cart is empty.</p>
-        <a routerLink="/products" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-            ariaCurrentWhenActive="page">Shop</a>
+        <a routerLink="/products">Browse store
+            <lucide-angular [img]="ChevronRight" [size]="18" class="my-icon" />
+        </a>
     </div>
     }
 </main>

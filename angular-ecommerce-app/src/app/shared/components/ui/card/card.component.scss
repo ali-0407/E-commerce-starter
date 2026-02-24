@@ -1,9 +1,13 @@
 .card {
-    border: 1px solid #efefef;
-    border-radius: 0.5rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: box-shadow 0.2s, border-color 0.2s;
 
-    .card-header,
-    .card-body {
-        padding: 1rem;
-    }
+  .card-header,
+  .card-body {
+    padding: 1rem;
+  }
 }

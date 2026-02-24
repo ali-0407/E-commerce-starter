@@ -1,97 +1,150 @@
-# 🛍️ Angular E-commerce
+<p align="center">
+  <img src="https://img.shields.io/badge/Angular-19.2-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular" />
+  <img src="https://img.shields.io/badge/NgRx-Store-999999?style=for-the-badge&logo=redux&logoColor=white" alt="NgRx" />
+  <img src="https://img.shields.io/badge/Stripe-Payments-008CDD?style=for-the-badge&logo=stripe&logoColor=white" alt="Stripe" />
+  <img src="https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
+</p>
 
-A modern, responsive, and fully optimized e-commerce front-end built with **Angular 19.2**, **NgRx**, **Sass**, and **Node.js** for Stripe payment integration. Designed using best practices and technical standards for clean code, state management, and developer experience.
+<h1 align="center">Angular E‑commerce</h1>
 
+<p align="center">
+  <strong>Modern, responsive e‑commerce front-end</strong> — Angular 19, NgRx, Sass & Node.js with Stripe integration.
+</p>
 
-## 🚀 Demo
-
-🔗 Live Demo: [angular-ecommerce](https://angular-ecommerce-bw8n.vercel.app/)
-
----
-
-
-## ✨ Features
-
-- 💾 **Cart Persistence** using NgRx
-- 💳 **Stripe Checkout Integration**
-- 📱 **Responsive Design** for all screen sizes
-- 💅 **CSS Animations** with Sass styling
-- ⚙️ **NgRx Store** for robust state management
-- 🧼 **Clean Code** and best practices with modular structure
-
----
-
-## 🛠️ Tech Stack
-
-- **Frontend:** Angular 19.2, NgRx, RxJS, TypeScript, Sass, Stripe
-- **Backend:** Node.js, Express (for Stripe integration)
-- **Styling:** SCSS, CSS animations, responsive design
-- **State Management:** NgRx Store
-- **Deployment:** Vercel
+<p align="center">
+  <a href="#-quick-start">Quick Start</a>
+  &nbsp;·&nbsp;
+  <a href="#-deploy-to-vercel">Deploy</a>
+  &nbsp;·&nbsp;
+  <a href="#-contact">Contact</a>
+</p>
 
 ---
 
-## 📦 Installation
+## Table of contents
 
-### 1. Clone the repository
+- [Overview](#-overview)
+- [Features](#-features)
+- [Tech stack](#-tech-stack)
+- [Quick start](#-quick-start)
+- [Deploy to Vercel](#-deploy-to-vercel)
+- [Project structure](#-project-structure)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Contact](#-contact)
+
+---
+
+## Overview
+
+A production-oriented e‑commerce front-end built with **Angular 19.2**, **NgRx**, **Sass**, and **Node.js** for Stripe payments. The project follows clean architecture, strong state management, and responsive design.
+
+---
+
+## Features
+
+| Area         | Description                                        |
+| ------------ | -------------------------------------------------- |
+| **Cart**     | Persistent cart state with NgRx                    |
+| **Payments** | Stripe Checkout integration via Express backend    |
+| **UI/UX**    | Responsive layout, SCSS animations, modern styling |
+| **State**    | NgRx Store for predictable state management        |
+| **Code**     | Modular structure and consistent patterns          |
+
+---
+
+## Tech stack
+
+| Layer        | Technologies                                                |
+| ------------ | ----------------------------------------------------------- |
+| **Frontend** | Angular 19.2, NgRx, RxJS, TypeScript, Sass, Stripe (client) |
+| **Backend**  | Node.js, Express (Stripe webhooks & checkout)                |
+| **Styling**  | SCSS, CSS animations, responsive breakpoints                |
+| **Deploy**   | Vercel (frontend + backend as separate projects)             |
+
+---
+
+## Quick start
+
+**1. Clone and enter the repo**
 
 ```bash
-git clone https://github.com/mohammadoftadeh/angular-ecommerce.git
+git clone https://github.com/ali-0407/angular-ecommerce.git
 cd angular-ecommerce
 ```
 
-### 2. Install Angular App dependencies
+**2. Install and run the Angular app**
 
 ```bash
 cd angular-ecommerce-app
 npm install
+npm start
 ```
 
-### 3. Install Backend dependencies
+**3. In another terminal — install and run the Stripe server**
 
 ```bash
-cd ../my-app-server
+cd my-app-server
 npm install
-```
-
-## ▶️ Running the Project
-
-### Start the Angular frontend
-
-```bash
-cd angular-ecommerce-app
 npm start
 ```
 
-### Start the Node.js Stripe server
+Open [http://localhost:4200](http://localhost:4200). Ensure the backend is running for checkout.
 
-```bash
-cd ../my-app-server
-npm start
+---
+
+## Deploy to Vercel
+
+Deploy **frontend** and **backend** as **two separate Vercel projects**.
+
+| Project   | Root Directory          | Build Command   | Output Directory             |
+| --------- | ----------------------- | --------------- | ---------------------------- |
+| Frontend  | `angular-ecommerce-app` | `npm run build` | `dist/angular-ecommerce-app`  |
+| Backend   | `my-app-server`         | *(none)*        | — (Vercel runs `server.js`)   |
+
+**After deploying the backend:** copy its URL (e.g. `https://my-app-server-xxx.vercel.app`). In the **frontend** Vercel project, add an environment variable (e.g. `serverUrl` or the name your Angular app uses) and set it to that backend URL so the app can call the API. Redeploy the frontend after setting the variable.
+
+---
+
+## Project structure
+
 ```
+angular-ecommerce/
+├── angular-ecommerce-app/   # Angular frontend (UI, NgRx, Stripe client)
+└── my-app-server/           # Node.js + Express (Stripe checkout & webhooks)
+```
+
+---
 
 ## Contributing
 
-Contributions are welcome! If you'd like to contribute, Please follow these steps to contribute to Shopco:
-
 1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/your-feature-name`).
-3. Make your changes.
-4. Push to the branch (`git push origin feature/your-feature-name`).
-5. Open a pull request.
+2. Create a branch: `git checkout -b feature/your-feature-name`.
+3. Commit changes: `git commit -m 'Add some feature'`.
+4. Push: `git push origin feature/your-feature-name`.
+5. Open a Pull Request.
 
-## Issues
+For bugs or questions, open an [issue](https://github.com/ali-0407/angular-ecommerce/issues).
 
-Feel free to submit issues for any bugs, feature requests, or general questions related to the project. You can also reach out via [email](mailto:mr.mohammadoftadeh@gmail.com) for support.
+---
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) file for details.
+This project is licensed under the **MIT License** — see the [LICENSE](https://opensource.org/licenses/MIT) file for details.
+
+---
 
 ## Contact
 
-Feel free to reach out to:
+**Muhammad Umair Ali**
 
-- **Name**: Mohammad Oftadeh
-- **Email**: [mr.mohammadoftadeh@gmail.com](mailto:mr.mohammadoftadeh@gmail.com)
-- **GitHub**: [https://github.com/mohammadoftadeh](https://github.com/mohammadoftadeh)
+| | |
+|--|--|
+| **Email** | [maliupwork123@gmail.com](mailto:maliupwork123@gmail.com) |
+| **GitHub** | [github.com/ali-0407](https://github.com/ali-0407) |
+
+---
+
+<p align="center">
+  <sub>Built with Angular &amp; Node.js</sub>
+</p>

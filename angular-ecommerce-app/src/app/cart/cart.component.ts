@@ -8,14 +8,16 @@ import { CartState } from "../lib/features/cart/cart.reducer";
 import { CurrencyPipe } from "@angular/common";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "../../environments/environment.development";
+import { LucideAngularModule, ChevronRight } from "lucide-angular";
 
 @Component({
     selector: 'cart',
-    imports: [RouterLink, RouterLinkActive, CartProductList, CurrencyPipe],
+    imports: [RouterLink, RouterLinkActive, CartProductList, CurrencyPipe, LucideAngularModule],
     templateUrl: './cart.component.html',
     styleUrl: './cart.component.scss'
 })
 export class CartComponent {
+    readonly ChevronRight = ChevronRight;
     data = signal<CartState>({
         items: [],
         totalQuantities: 0,

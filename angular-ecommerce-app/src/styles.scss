@@ -1,62 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+/* Design system — Angular E‑commerce */
+:root {
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --color-bg: #fefdfb;
+  --color-surface: #ffffff;
+  --color-border: #e7e5e4;
+  --color-text: #1c1917;
+  --color-text-muted: #78716c;
+  --color-accent: #ea580c;
+  --color-accent-hover: #c2410c;
+  --color-header-bg: #1c1917;
+  --color-header-text: #fafaf9;
+  --radius-card: 12px;
+  --radius-btn: 10px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
 *,
 html,
 body {
-    font-family: "Outfit", sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
 }
 
 .container {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 1rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
 }
 
 .animate-pulse {
-    animation: pulse 2s infinite;
+  animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-    0% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.3;
-    }
-
-    100% {
-        opacity: 1;
-    }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
 }
 
 .shimmer {
-    position: relative;
-}
-
-.shimmer {
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: linear-gradient(-45deg, #f0f0f0 25%, #e4e4e4 50%, #f0f0f0 75%);
-        background-size: 200% 100%;
-        animation: shimmerAnimation 2s infinite;
-    }
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      #f5f5f4 0%,
+      #e7e5e4 40%,
+      #f5f5f4 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmerAnimation 2s infinite;
+  }
 }
 
 @keyframes shimmerAnimation {
-    0% {
-        background-position: -100% 0;
-    }
-
-    100% {
-        background-position: 100% 0;
-    }
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }

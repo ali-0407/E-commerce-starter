@@ -1,181 +1,178 @@
 main {
-    padding-top: 3rem;
-    padding-bottom: 6rem;
+  flex: 1;
+  padding: 2.5rem 0 4rem;
 
-    &>section {
+  > section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+      margin: 0;
+    }
+
+    button {
+      padding: 0.5rem 0.875rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #b91c1c;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: var(--radius-btn);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+
+      &:hover {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+    }
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    section {
+      width: 100%;
+      max-width: 100%;
+      padding: 1.25rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      > div {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 2rem;
+        font-size: 0.9375rem;
 
-        h1 {
-            font-size: 24px;
+        span:first-child {
+          color: var(--color-text-muted);
+        }
+        span:last-child {
+          font-weight: 600;
+          color: var(--color-text);
+        }
+      }
+
+      .cart-total {
+        border-top: 1px solid var(--color-border);
+        padding-top: 1rem;
+        margin-top: 0.25rem;
+
+        span {
+          font-size: 1.125rem;
+          font-weight: 700;
+        }
+      }
+
+      button {
+        height: 52px;
+        margin-top: 0.5rem;
+        padding: 0 1.5rem;
+        font-weight: 600;
+        font-size: 1rem;
+        background: var(--color-accent);
+        color: white;
+        border: none;
+        border-radius: var(--radius-btn);
+        cursor: pointer;
+        transition: background 0.2s, opacity 0.2s;
+        box-shadow: var(--shadow-sm);
+
+        &:hover:not(:disabled) {
+          background: var(--color-accent-hover);
         }
 
-        button {
-            padding: .3rem .6rem;
-            color: red;
-            transition: .1s;
-            background-color: #fff;
-            border-radius: 4px;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-
-            &:hover {
-                background-color: rgba(252, 192, 192, 0.2);
-            }
+        &:disabled {
+          opacity: 0.7;
+          cursor: not-allowed;
         }
+      }
+    }
+  }
+
+  .cart-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    min-height: 40vh;
+    text-align: center;
+
+    p {
+      font-size: 1.125rem;
+      color: var(--color-text-muted);
+      margin: 0;
     }
 
-    &>div {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      background: var(--color-accent);
+      color: white;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      text-decoration: none;
+      border-radius: var(--radius-btn);
+      transition: background 0.2s;
 
-        section {
-            width: 100%;
-            height: fit-content;
-            border: 1px solid #eee;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 1rem;
+      &:hover {
+        background: var(--color-accent-hover);
+      }
 
-            &>div {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-
-                span {
-                    font-size: 16px;
-                    color: gray;
-
-                    &:last-child {
-                        color: #000;
-                        font-weight: bold;
-                    }
-                }
-
-            }
-
-            .cart-total {
-                border-top: 1px solid #eee;
-                padding-top: 1rem;
-
-                span {
-                    font-size: 20px;
-                    color: #000;
-                }
-            }
-
-            button {
-                height: 60px;
-                font-weight: bold;
-                font-size: 16px;
-                background-color: #000;
-                border: none;
-                color: #fff;
-                transition: .1s;
-                cursor: pointer;
-
-                position: fixed;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-
-                &:hover {
-                    background-color: rgba(0, 0, 0, 0.8)
-                }
-
-
-                [disabled],
-                &:disabled {
-                    background-color: rgba(0, 0, 0, 0.5)
-                }
-            }
-        }
+      .my-icon {
+        width: 18px;
+        height: 18px;
+      }
     }
+  }
 
-    .cart-empty {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 1rem;
-        width: fit-content;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        p {
-            text-wrap: nowrap;
-            color: gray;
-        }
-
-        a {
-            text-decoration: none;
-            background-color: #000;
-            color: #fff;
-            transition: .1s;
-            padding: .4rem 1rem;
-            border-radius: 4px;
-            font-size: 14px;
-
-            &:hover {
-                background-color: rgba(0, 0, 0, 0.8)
-            }
-        }
+  .cart-fill-row {
+    > * {
+      width: 100%;
     }
-
-    .cart-fill-row {
-        &>* {
-            width: 100%;
-        }
-
-        .cart-product-list {
-            &>* {
-                grid-column: span 2 / span 2;
-            }
-        }
+    .cart-product-list > * {
+      grid-column: span 2 / span 2;
     }
+  }
 }
 
 @media screen and (min-width: 768px) {
-    main {
-        &>div {
-            section {
-                margin-bottom: auto;
-
-                button {
-                    border-radius: .5rem;
-                    position: relative;
-                    left: auto;
-                    bottom: auto;
-                    width: auto;
-                }
-            }
-        }
-    }
+  main > div section {
+    margin-bottom: 0;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-    main {
-        &>div {
-            flex-direction: row;
+  main > div {
+    flex-direction: row;
+    align-items: flex-start;
 
-            section {
-                max-width: 400px;
-            }
-        }
-
-        .cart-fill-row {
-            &>section {
-                max-width: 500px;
-            }
-        }
+    section {
+      max-width: 380px;
+      position: sticky;
+      top: 5.5rem;
     }
+  }
+
+  main .cart-fill-row section {
+    max-width: 420px;
+  }
 }
