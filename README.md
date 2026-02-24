@@ -95,6 +95,8 @@ Deploy **frontend** and **backend** as **two separate Vercel projects**.
 
 **Important (Angular 19):** The frontend build puts files in a `browser` subfolder. You **must** set the frontend project’s **Output Directory** to `dist/angular-ecommerce-app/browser` in Vercel (Project → Settings → General). If you use `dist/angular-ecommerce-app` you will get 404s. The repo’s `angular-ecommerce-app/vercel.json` already sets this.
 
+**Backend (my-app-server) env vars:** In the backend Vercel project, set **Environment Variables**: `STRIPE_SECRET_KEY` (from [Stripe Dashboard](https://dashboard.stripe.com/apikeys)), and optionally `SUCCESS_URL` and `CANCEL_URL` (e.g. `https://your-frontend.vercel.app/payment/success` and `.../payment/cancel`). If omitted, the server uses the request origin + `/payment/success` and `/payment/cancel`.
+
 **After deploying the backend:** copy its URL (e.g. `https://my-app-server-xxx.vercel.app`). In the **frontend** Vercel project, add an environment variable (e.g. `serverUrl` or the name your Angular app uses) and set it to that backend URL so the app can call the API. Redeploy the frontend after setting the variable.
 
 ---
